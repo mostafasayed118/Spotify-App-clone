@@ -41,11 +41,13 @@ class ChooseModePage extends StatelessWidget {
                   child: SvgPicture.asset(AppVectors.logo),
                 ),
                 const Spacer(),
-                Text(AppStrings.chooseMode,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(color: AppColors.white)),
+                Text(
+                  AppStrings.chooseMode,
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        color: AppColors.white,
+                        fontSize: 22,
+                      ),
+                ),
                 const SizedBox(
                   height: 21,
                 ),

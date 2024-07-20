@@ -37,11 +37,13 @@ class GetStartedPage extends StatelessWidget {
                   child: SvgPicture.asset(AppVectors.logo),
                 ),
                 const Spacer(),
-                Text(AppStrings.enjoy,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(color: AppColors.white)),
+                Text(
+                  AppStrings.enjoy,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(color: AppColors.white, fontSize: 24),
+                ),
                 const SizedBox(
                   height: 21,
                 ),

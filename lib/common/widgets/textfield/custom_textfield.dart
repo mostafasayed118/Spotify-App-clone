@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_app/common/helpers/is_dark_mode.dart';
 
 import '../../../core/configs/theme/app_colors.dart';
 
@@ -24,7 +25,13 @@ class CustomTextfield extends StatelessWidget {
       decoration: InputDecoration(
         suffixIcon: iconButton,
         hintText: hintText,
-      ).applyDefaults(Theme.of(context).inputDecorationTheme),
+      ).applyDefaults(Theme.of(context).inputDecorationTheme.copyWith(
+            hintStyle: Theme.of(context).textTheme.titleSmall!.copyWith(
+                  color: context.isDarkMode
+                      ? AppColors.darkGreyForTextField.withOpacity(0.7)
+                      : AppColors.black.withOpacity(0.5),
+                ),
+          )),
     );
   }
 }

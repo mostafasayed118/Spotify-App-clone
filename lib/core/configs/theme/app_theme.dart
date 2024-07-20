@@ -3,10 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:spotify_app/core/configs/theme/app_colors.dart';
 
 class AppTheme {
-  final double? height;
-  AppTheme({
-    this.height,
-  });
   static final lightTheme = ThemeData(
     // primaryColor
     primaryColor: AppColors.primary,
@@ -50,7 +46,7 @@ class AppTheme {
           fontSize: 16,
           fontWeight: FontWeight.bold,
         ),
-        minimumSize: const Size.fromHeight(70),
+        minimumSize: const Size.fromHeight(80),
         elevation: 0,
       ),
     ),
@@ -104,7 +100,7 @@ class AppTheme {
     // textTheme
     textTheme: const TextTheme(
       titleLarge: TextStyle(
-        fontSize: 16,
+        fontSize: 20,
         fontWeight: FontWeight.bold,
         color: AppColors.lightBackgroundAndWhite,
       ),
@@ -140,7 +136,7 @@ class AppTheme {
     inputDecorationTheme: const InputDecorationTheme(
       filled: true,
       fillColor: AppColors.transparent,
-      contentPadding: EdgeInsets.all(30),
+      contentPadding: EdgeInsets.all(25),
       hintStyle: TextStyle(
         color: AppColors.black,
         fontWeight: FontWeight.w500,

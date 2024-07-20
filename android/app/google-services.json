@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "811386323725",
+    "project_id": "spotfiy01",
+    "storage_bucket": "spotfiy01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811386323725:android:91fce5a7ee45a4832d6644",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJz8dXiERXwMtdLD2pPPbxIYLU0MsHVVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

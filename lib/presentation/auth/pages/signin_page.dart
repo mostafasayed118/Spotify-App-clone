@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spotify_app/common/helpers/is_dark_mode.dart';
 import 'package:spotify_app/common/widgets/button/basic_app_button.dart';
-import 'package:spotify_app/common/widgets/custom_icon/custome_icon.dart';
+import 'package:spotify_app/common/widgets/custom_icon/custom_icon.dart';
 import 'package:spotify_app/common/widgets/textfield/custom_textfield.dart';
 import 'package:spotify_app/core/configs/strings/app_strings.dart';
 import 'package:spotify_app/presentation/auth/pages/signup_page.dart';
@@ -20,6 +21,7 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: BasicAppBar(
+        hideBack: false,
         title: SvgPicture.asset(
           AppVectors.logo,
           width: 100,
@@ -63,7 +65,7 @@ class SignInPage extends StatelessWidget {
                 hintText: AppStrings.passwordHint,
                 keyboardType: TextInputType.visiblePassword,
                 iconButton: IconButton(
-                  icon: const Icon(Icons.visibility_off,
+                  icon: const Icon(Icons.visibility_off_outlined,
                       color: AppColors.lightGreyForPasswordIcon),
                   onPressed: () {
                     // TODO: Show/Hide password
@@ -84,7 +86,9 @@ class SignInPage extends StatelessWidget {
                     AppStrings.or,
                     style: Theme.of(context).textTheme.titleSmall!.copyWith(
                           fontSize: 14,
-                          color: AppColors.black,
+                          color: context.isDarkMode
+                              ? AppColors.white
+                              : AppColors.black,
                           fontWeight: FontWeight.bold,
                         ),
                   ),
@@ -97,51 +101,36 @@ class SignInPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CustomIconWidget(
-                      svgPath: AppVectors.google, color: AppColors.transparent),
+                      svgPathLightMode: AppVectors.google,
+                      color: AppColors.transparent),
                   SizedBox(width: 50),
                   CustomIconWidget(
-                      svgPath: AppVectors.apple, color: AppColors.transparent),
+                      svgPathDarkMode: AppVectors.appleDark,
+                      svgPathLightMode: AppVectors.apple,
+                      color: AppColors.transparent),
                 ],
               ),
               const SizedBox(
                 height: 30,
               ),
-              TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SignInPage(),
-                    ),
-                  );
-                },
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      AppStrings.notMember,
-                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                            fontSize: 14,
-                          ),
-                    ),
-                    CustomTextButton(
-                        text: AppStrings.registerNow,
-                        onPressed: () {
-                          navigatePush(
-                              context: context, screen: const SignUpPage());
-                        },
-                        color: AppColors.blue,
-                        fontSize: 14),
-                    // Text(
-                    //   AppStrings.registerNow,
-                    //   style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                    //         fontSize: 14,
-                    //         color: AppColors.blue,
-                    //         fontWeight: FontWeight.bold,
-                    //       ),
-                    // ),
-                  ],
-                ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    AppStrings.notMember,
+                    style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                          fontSize: 14,
+                        ),
+                  ),
+                  CustomTextButton(
+                      text: AppStrings.registerNow,
+                      onPressed: () {
+                        navigatePushReplacement(
+                            context: context, screen: const SignUpPage());
+                      },
+                      color: AppColors.blue,
+                      fontSize: 14),
+                ],
               ),
             ],
           ),

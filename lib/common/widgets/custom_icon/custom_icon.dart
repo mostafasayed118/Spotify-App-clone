@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spotify_app/common/helpers/is_dark_mode.dart';
 
 class CustomIconWidget extends StatelessWidget {
-  final String svgPath;
+  final String svgPathLightMode;
+  final String? svgPathDarkMode;
   final Color color;
   const CustomIconWidget(
-      {super.key, required this.svgPath, required this.color});
+      {super.key, required this.svgPathLightMode, required this.color,  this.svgPathDarkMode});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class CustomIconWidget extends StatelessWidget {
           color: color,
         ),
         child: SvgPicture.asset(
-          svgPath,
+          context.isDarkMode ? svgPathDarkMode ?? svgPathLightMode : svgPathLightMode,
           width: 40,
           height: 40,
         ),

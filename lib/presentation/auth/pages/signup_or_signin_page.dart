@@ -25,7 +25,9 @@ class SignUpOrSignInPage extends StatelessWidget {
         children: [
           const Padding(
             padding: EdgeInsets.all(16.0),
-            child: BasicAppBar(),
+            child: BasicAppBar(
+              hideBack: false,
+            ),
           ),
           const TopAndBottomPattern(
             alignment: Alignment.topRight,
@@ -54,7 +56,9 @@ class SignUpOrSignInPage extends StatelessWidget {
                   Text(
                     AppStrings.enjoy,
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          color: AppColors.lightBackgroundAndWhite,
+                          color: context.isDarkMode
+                              ? AppColors.lightBackgroundAndWhite
+                              : AppColors.black,
                           fontSize: 24,
                         ),
                   ),
