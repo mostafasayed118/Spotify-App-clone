@@ -26,15 +26,15 @@ class SpotifyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (_) => ThemeCubit(),
-        ),
+        BlocProvider(create: (_) => ThemeCubit()),
       ],
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, mode) => MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
+          themeMode: mode,
           home: const SplashPage(),
         ),
       ),

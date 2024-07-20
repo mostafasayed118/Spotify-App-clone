@@ -20,7 +20,7 @@ class BasicAppButton extends StatelessWidget {
       style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
             textStyle: const WidgetStatePropertyAll(
               TextStyle(
-                fontSize: 22,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -30,9 +30,10 @@ class BasicAppButton extends StatelessWidget {
           ),
       child: Text(
         text,
-        style: Theme.of(context).textTheme.titleLarge!.copyWith(
-              color: color,
-            ),
+        style: Theme.of(context)
+            .textTheme
+            .titleLarge!
+            .copyWith(color: color, fontSize: 18),
       ),
     );
   }

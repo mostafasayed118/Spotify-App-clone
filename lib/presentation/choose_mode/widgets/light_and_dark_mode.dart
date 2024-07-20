@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spotify_app/common/helpers/is_dark_mode.dart';
 import 'package:spotify_app/core/configs/theme/app_colors.dart';
 
 class LightAndDarkMode extends StatelessWidget {
@@ -42,8 +43,10 @@ class LightAndDarkMode extends StatelessWidget {
         const SizedBox(height: 15),
         Text(text,
             style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                  fontWeight: FontWeight.w500,
-                )),
+                fontWeight: FontWeight.w500,
+                color: context.isDarkMode
+                    ? AppColors.lightBackgroundAndWhite
+                    : AppColors.lightBackgroundAndWhite)),
       ],
     );
   }

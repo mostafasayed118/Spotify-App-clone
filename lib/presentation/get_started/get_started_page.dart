@@ -48,7 +48,7 @@ class GetStartedPage extends StatelessWidget {
                 Text(
                   AppStrings.lorem,
                   style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                        color: AppColors.grey,
+                        color: AppColors.greyForSmallText,
                         fontSize: 13,
                       ),
                   textAlign: TextAlign.center,
@@ -72,4 +72,3 @@ class GetStartedPage extends StatelessWidget {
     );
   }
 }
-

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spotify_app/presentation/auth/pages/signup_or_signin_page.dart';
 
 import '../../../common/navigator/navigator.dart';
 import '../../../common/widgets/button/basic_app_button.dart';
@@ -51,20 +52,20 @@ class ChooseModePage extends StatelessWidget {
                 Row(
                   children: [
                     LightAndDarkMode(
-                      text: AppStrings.lightMode,
-                      svgPath: AppVectors.sun,
+                      text: AppStrings.darkMode,
+                      svgPath: AppVectors.moon,
                       onTap: () {
-                        context.read<ThemeCubit>().changeTheme(ThemeMode.light);
+                        context.read<ThemeCubit>().changeTheme(ThemeMode.dark);
                       },
                     ),
                     const SizedBox(
                       width: 85,
                     ),
                     LightAndDarkMode(
-                      text: AppStrings.darkMode,
-                      svgPath: AppVectors.moon,
+                      text: AppStrings.lightMode,
+                      svgPath: AppVectors.sun,
                       onTap: () {
-                        context.read<ThemeCubit>().changeTheme(ThemeMode.dark);
+                        context.read<ThemeCubit>().changeTheme(ThemeMode.light);
                       },
                     ),
                   ],
@@ -75,7 +76,7 @@ class ChooseModePage extends StatelessWidget {
                 BasicAppButton(
                   onPressed: () {
                     navigatePush(
-                        context: context, screen: const ChooseModePage());
+                        context: context, screen: const SignUpOrSignInPage());
                   },
                   text: AppStrings.continueButton,
                   color: Colors.white,

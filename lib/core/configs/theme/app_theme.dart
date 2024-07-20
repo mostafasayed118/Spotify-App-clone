@@ -9,7 +9,7 @@ class AppTheme {
   });
   static final lightTheme = ThemeData(
     primaryColor: AppColors.primary,
-    scaffoldBackgroundColor: AppColors.lightBackground,
+    scaffoldBackgroundColor: AppColors.lightBackgroundAndWhite,
     brightness: Brightness.light,
     fontFamily: 'Satoshi',
     textTheme: const TextTheme(
@@ -21,7 +21,7 @@ class AppTheme {
       titleMedium: TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.bold,
-        color: AppColors.white,
+        color: AppColors.black,
       ),
       titleSmall: TextStyle(
         fontSize: 16,
@@ -36,10 +36,11 @@ class AppTheme {
           borderRadius: BorderRadius.circular(30),
         ),
         textStyle: const TextStyle(
-          fontSize: 22,
+          fontSize: 16,
           fontWeight: FontWeight.bold,
         ),
         minimumSize: const Size.fromHeight(70),
+        elevation: 0,
       ),
     ),
   );
@@ -49,6 +50,23 @@ class AppTheme {
     scaffoldBackgroundColor: AppColors.darkBackground,
     brightness: Brightness.dark,
     fontFamily: 'Satoshi',
+    textTheme: const TextTheme(
+      titleLarge: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: AppColors.lightBackgroundAndWhite,
+      ),
+      titleMedium: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+        color: AppColors.lightBackgroundAndWhite,
+      ),
+      titleSmall: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+        color: AppColors.lightBackgroundAndWhite,
+      ),
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primary,
@@ -56,9 +74,11 @@ class AppTheme {
           borderRadius: BorderRadius.circular(30),
         ),
         textStyle: const TextStyle(
-          fontSize: 20,
+          fontSize: 22,
           fontWeight: FontWeight.bold,
         ),
+        minimumSize: const Size.fromHeight(70),
+        elevation: 0,
       ),
     ),
   );
