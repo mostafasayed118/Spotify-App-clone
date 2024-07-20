@@ -63,7 +63,8 @@ class SignInPage extends StatelessWidget {
                 hintText: AppStrings.passwordHint,
                 keyboardType: TextInputType.visiblePassword,
                 iconButton: IconButton(
-                  icon: const Icon(Icons.remove_red_eye),
+                  icon: const Icon(Icons.visibility_off,
+                      color: AppColors.lightGreyForPasswordIcon),
                   onPressed: () {
                     // TODO: Show/Hide password
                   },

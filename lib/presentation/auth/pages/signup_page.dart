@@ -67,7 +67,8 @@ class SignUpPage extends StatelessWidget {
                 hintText: AppStrings.passwordHint,
                 keyboardType: TextInputType.visiblePassword,
                 iconButton: IconButton(
-                  icon: const Icon(Icons.remove_red_eye),
+                  icon: const Icon(Icons.visibility_off,
+                      color: AppColors.lightGreyForPasswordIcon),
                   onPressed: () {
                     // TODO: Show/Hide password
                   },
@@ -128,20 +129,14 @@ class SignUpPage extends StatelessWidget {
                           ),
                     ),
                     CustomTextButton(
-                        text: AppStrings.signIn,
-                        onPressed: () {
-                          navigatePush(
-                              context: context, screen: const SignInPage());
-                        },
-                        color: AppColors.blue),
-                    // Text(
-                    //   AppStrings.signIn,
-                    //   style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                    //         fontSize: 14,
-                    //         color: AppColors.blue,
-                    //         fontWeight: FontWeight.bold,
-                    //       ),
-                    // ),
+                      text: AppStrings.signIn,
+                      onPressed: () {
+                        navigatePush(
+                            context: context, screen: const SignInPage());
+                      },
+                      color: AppColors.blue,
+                      fontSize: 14,
+                    ),
                   ],
                 ),
               ),

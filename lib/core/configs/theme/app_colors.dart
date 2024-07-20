@@ -8,6 +8,7 @@ class AppColors {
   static const lightGrey = Color(0xffA0A0A0);
   static const darkGrey = Color(0xff343434);
   static const greyForSmallText = Color(0xff797979);
+  static const lightGreyForPasswordIcon = Color(0xff8D8D8D);
   static const blue = Color(0xff288CE9);
   static const white = Color(0xffDADADA);
   static const normalWhite = Color(0xffFFFFFF);
