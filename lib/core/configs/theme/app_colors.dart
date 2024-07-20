@@ -10,6 +10,7 @@ class AppColors {
   static const greyForSmallText = Color(0xff797979);
   static const blue = Color(0xff288CE9);
   static const white = Color(0xffDADADA);
+  static const normalWhite = Color(0xffFFFFFF);
   static const black = Color(0xff383838);
 
   static const transparent = Colors.transparent;

@@ -62,7 +62,7 @@ class GetStartedPage extends StatelessWidget {
                         context: context, screen: const ChooseModePage());
                   },
                   text: AppStrings.getStarted,
-                  color: Colors.white,
+                  color: AppColors.normalWhite,
                 ),
               ],
             ),

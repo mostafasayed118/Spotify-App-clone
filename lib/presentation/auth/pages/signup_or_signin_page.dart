@@ -10,6 +10,7 @@ import 'package:spotify_app/presentation/auth/pages/signup_page.dart';
 import 'package:spotify_app/presentation/auth/widgets/top_and_bottom_image.dart';
 
 import '../../../common/widgets/appbar/appbar.dart';
+import '../../../common/widgets/textbutton/custom_textbutton.dart';
 import '../../../core/configs/strings/app_strings.dart';
 import '../../../core/configs/theme/app_colors.dart';
 import '../widgets/top_and_bottom_pattern.dart';
@@ -81,32 +82,43 @@ class SignUpOrSignInPage extends StatelessWidget {
                                 context: context, screen: const SignUpPage());
                           },
                           text: AppStrings.register,
-                          color: AppColors.lightBackgroundAndWhite,
+                          color: AppColors.normalWhite,
                         ),
                       ),
                       const SizedBox(
                         width: 20,
                       ),
                       Expanded(
-                        flex: 1,
-                        child: TextButton(
-                          onPressed: () {
-                            navigatePush(
-                                context: context, screen: const SignInPage());
-                          },
-                          child: Text(
-                            AppStrings.signIn,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleSmall!
-                                .copyWith(
-                                  color: context.isDarkMode
-                                      ? AppColors.lightBackgroundAndWhite
-                                      : AppColors.black,
-                                ),
-                          ),
-                        ),
-                      )
+                          flex: 1,
+                          child: CustomTextButton(
+                            text: AppStrings.signIn,
+                            fontSize: 18,
+                            color: context.isDarkMode
+                                ? AppColors.normalWhite
+                                : AppColors.black,
+                            onPressed: () {
+                              navigatePush(
+                                  context: context, screen: const SignInPage());
+                            },
+                          )
+                          //  TextButton(
+                          //   onPressed: () {
+                          //     navigatePush(
+                          //         context: context, screen: const SignInPage());
+                          //   },
+                          //   child: Text(
+                          //     AppStrings.signIn,
+                          //     style: Theme.of(context)
+                          //         .textTheme
+                          //         .titleSmall!
+                          //         .copyWith(
+                          //           color: context.isDarkMode
+                          //               ? AppColors.normalWhite
+                          //               : AppColors.black,
+                          //         ),
+                          //   ),
+                          // ),
+                          )
                     ],
                   ),
                   const SizedBox(height: 90),

@@ -79,7 +79,7 @@ class ChooseModePage extends StatelessWidget {
                         context: context, screen: const SignUpOrSignInPage());
                   },
                   text: AppStrings.continueButton,
-                  color: Colors.white,
+                  color: AppColors.normalWhite,
                 ),
               ],
             ),
