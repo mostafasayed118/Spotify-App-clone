@@ -22,7 +22,7 @@ class LightAndDarkMode extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            onTap;
+            onTap();
           },
           child: ClipOval(
             child: BackdropFilter(
